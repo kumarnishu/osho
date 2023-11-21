@@ -14,32 +14,44 @@
 
         div {
             position: absolute;
+            top:0;
             display: flex;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        img {
             width: 100vw;
             height: 100vh;
         }
 
 
         #timer {
+            background-color: rgba(0, 0, 0, 0.22);
             position: relative;
-            margin: 20;
-            background-color: rgba(0, 0, 0, 0.7);
+            padding: 28px;
+            font-weight: bold;
             color: white;
-            padding: 10px;
             font-size: 24px;
+            text-align: center;
+        }
+
+        @media only screen and (min-width: 600px) {
+            img {
+                height: 100%;
+                width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
     <div>
-        <video src="video.mp4" autoplay loop>
-
-        </video>
+        <img src="World.jpeg" alt="mark_image">
     </div>
-    <br>
-    <span id="timer">
-    </span>
+    <p id="timer">
+    </p>
 </body>
 <script>
     var span = document.getElementById('timer');
@@ -49,7 +61,7 @@
         let current_date = new Date()
         let divideHours = 60 * 60 * 1000
         var hours = Math.floor((launchDate - current_date) / divideHours)
-        span.textContent = `${hours}h : ${60 - new Date().getMinutes()}m : ${new Date().getSeconds()}s `
+        span.textContent = `Hurry Up ! ${hours}h : ${60 - new Date().getMinutes()}m : ${new Date().getSeconds()}s left`
     }
     setInterval(time, 1000);
 </script>
