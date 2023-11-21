@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            position: absolute;
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+
+        #timer {
+            position: relative;
+            margin: 20;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="World.gif" alt="mark_image">
+    </div>
+    <br>
+    <span id="timer">
+    </span>
+</body>
+<script>
+    var span = document.getElementById('timer');
+
+    function time() {
+        var d = new Date();
+        var s = d.getSeconds();
+        var m = d.getMinutes();
+        var h = d.getHours();
+        span.textContent =
+            ("0" + h).substr(-2) + " : " + ("0" + m).substr(-2) + " : " + ("0" + s).substr(-2);
+    }
+    setInterval(time, 1000);
+</script>
+
+</html>
